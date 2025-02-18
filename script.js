@@ -1,14 +1,14 @@
-const gameBoard = {
-    board: Array(9).fill(null),
-    createBoard: () => this.board,
-};
-
-const players = {
-    player1:1,
-    player2:2
-};
 
 const gameManager={
+    gameBoard :{
+        board: Array(9).fill(null),
+        createBoard: () => this.board,
+        },
+    
+    players : {
+        player1:1,
+        player2:2
+    },
 
     winningCombinations: [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
