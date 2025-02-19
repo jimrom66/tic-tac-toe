@@ -3,12 +3,16 @@ const gameManager={
     gameBoard :{
         board: Array(9).fill(null),
         createBoard: () => this.board,
+        updateBoard:()=>board
         },
     
     players : {
-        player1:1,
-        player2:2
+        player1:{value: "X", id:1},
+        player2:{value:"O", id:2}
     },
+
+    currentPlayer:player1,
+    
 
     winningCombinations: [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
@@ -27,8 +31,20 @@ const gameManager={
             return "draw";
         }
          return null;
+    },
+    
+    makeMove: function(currentPlayer,index){
+        if (board[index] !== null){
+            return ;
+        }
+        else {
+            board[index]=currentPlayer.value;
+        }
+    },
+
+    changeTurn: function(){
+        currentPlayer = (currentPlayer.value === "X") ? "O" : "X";
     }
-        
 }
         
     
